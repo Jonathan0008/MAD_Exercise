@@ -7,15 +7,16 @@ import {
   Image,
   TextInput,
   ScrollView,
-  StyleSheet
+  StyleSheet,
 } from 'react-native';
 
 const App = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.view}>
-        <Title text="Basic Components in RN"/>
-        <Title text="Hallo World"/>
+        <Title text="Basic Components in RN" />
+        <Title text="Hallo World" />
+        <Title text="Hello juan" />
         <Image
           source={require('./assets/Acer_Wallpaper_03_3840x2400.jpg')}
           style={styles.image}
@@ -25,8 +26,8 @@ const App = () => {
           style={styles.image}
         />
         <Input placeholder="masukan nama anda" />
-        <Input placeholder="masukan passWord anda"/>
-        <Input placeholder="masukan email"/>
+        <Input placeholder="masukan passWord anda" />
+        <Input placeholder="masukan email" />
       </View>
     </ScrollView>
   );
