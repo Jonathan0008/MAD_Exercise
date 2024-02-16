@@ -1,17 +1,17 @@
 import React from 'react';
-import {StyleSheet, TextInput} from 'react-native';
+import {TextInput, StyleSheet} from 'react-native';
+
 const Input = ({placeholder}) => {
-  return <TextInput style={style.input} placeholder={placeholder} />;
+  return <TextInput placeholder={placeholder} style={style.inputNama} />;
 };
 
 const style = StyleSheet.create({
-  input: {
-    width: '100%',
-    height: 40,
-    borderWidth: 1,
-    borderColor: 'black',
-    paddingHorizontal: 10,
-    marginBottom: 20,
+  inputNama: {
+    borderWidth: 2,
+    margin: 5,
+    padding: 15,
+    borderRadius: 20,
   },
 });
+
 export default Input;

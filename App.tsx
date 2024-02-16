@@ -1,33 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Input from './src/components/Input';
 import Title from './src/components/Title';
 import {
   View,
-  Text,
-  Image,
-  TextInput,
   ScrollView,
   StyleSheet,
+  TouchableOpacity,
+  Text,
 } from 'react-native';
 
 const App = () => {
+  const [setCount] = useState(0);
+  const onPress = () => setCount(prevCount => prevCount + 1);
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.view}>
-        <Title text="Basic Components in RN" />
-        <Title text="Hallo World" />
-        <Title text="Hello juan" />
-        <Image
-          source={require('./assets/Acer_Wallpaper_03_3840x2400.jpg')}
-          style={styles.image}
-        />
-        <Image
-          source={require('./assets/Acer_Wallpaper_03_3840x2400.jpg')}
-          style={styles.image}
-        />
-        <Input placeholder="masukan nama anda" />
+        <Title text="Welcome" text2={undefined} />
+        <Title text2="UserName" text={undefined} />
+        <Input placeholder="masukan userName anda" />
+        <Title text2="PassWord" text={undefined} />
         <Input placeholder="masukan passWord anda" />
-        <Input placeholder="masukan email" />
+        <TouchableOpacity style={styles.button} onPress={onPress}>
+        <Text>sign in</Text>
+      </TouchableOpacity>
       </View>
     </ScrollView>
   );
@@ -36,35 +31,22 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'lightgrey',
+    backgroundColor: 'white',
   },
   view: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 40,
     backgroundColor: 'white',
-    borderRadius: 10,
   },
-  text: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    fontFamily: 'Arial',
-  },
-  image: {
-    width: 200,
-    height: 200,
-    marginBottom: 10,
-  },
-  input: {
-    width: '100%',
-    height: 40,
+  button: {
+    alignItems: 'center',
+    backgroundColor: 'orange',
     borderWidth: 1,
-    borderColor: 'black',
-    paddingHorizontal: 10,
-    marginBottom: 20,
+    margin: 50,
+    padding: 13,
+    borderRadius: 20,
+  },
+  countContainer: {
+    alignItems: 'center',
+    padding: 10,
   },
 });
 
